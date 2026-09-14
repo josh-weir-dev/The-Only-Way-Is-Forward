@@ -49,7 +49,7 @@
                     "name": "Submit",
                     "type": "Button",
                     "id": "d2040ea4-b579-4560-aa3f-7ebc6092145c",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false,

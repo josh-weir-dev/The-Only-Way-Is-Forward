@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnMoveRight(InputValue value)
     {
+        Debug.Log("Yes");
         isAccelerating = value.isPressed;
     }
 
