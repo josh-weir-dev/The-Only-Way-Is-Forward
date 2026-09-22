@@ -1,6 +1,7 @@
 using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Vector2 baseForce = new Vector2(1, 0);
     [SerializeField] private Vector2 movementForce = new Vector2(1, 0);
     [SerializeField] private float chargeRate = (float) 0.1;
+    [SerializeField] private TextMeshProUGUI speedText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int mph = (int) (rb2d.linearVelocity.x * 2.237);
+        speedText.text = mph + " MPH";
         if ( transform.position.y < -3f)
         {
             OnRestart();
