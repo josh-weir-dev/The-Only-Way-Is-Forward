@@ -1,3 +1,4 @@
+using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,6 +21,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if ( transform.position.y < -3f)
+        {
+            OnRestart();
+        }
+        
     }
 
     public void OnMoveRight(InputValue value)
@@ -27,6 +33,14 @@ public class PlayerMovement : MonoBehaviour
         isAccelerating = value.isPressed;
         currentHoldTime = 0;
         movementForce = baseForce;
+    }
+
+    public void OnRestart()
+    {
+        rb2d.Sleep();
+        transform.position = new Vector3(0, 0, 0);
+        movementForce = baseForce;
+        currentHoldTime = 0;
     }
 
     private void FixedUpdate()
